@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="4">
+    <test verbose="2" name="FlightsReservationTest1">
+        <!--<parameter name="passengerCount" value="One"/>-->
+        <parameter name="testDataPath" value="test-data/flightreservationportal/passenger1.json"/>
+        <classes>
+            <class name="com.automation.tests.flightsreservation.FlightsReservationTest" />
+        </classes>
+    </test>
+
+    <test verbose="2" name="FlightsReservationTest2">
+        <!--<parameter name="passengerCount" value="One"/>-->
+        <parameter name="testDataPath" value="test-data/flightreservationportal/passenger2.json"/>
+        <classes>
+            <class name="com.automation.tests.flightsreservation.FlightsReservationTest" />
+        </classes>
+    </test>
+
+    <test verbose="2" name="FlightsReservationTest3">
+        <!--<parameter name="passengerCount" value="One"/>-->
+        <parameter name="testDataPath" value="test-data/flightreservationportal/passenger3.json"/>
+        <classes>
+            <class name="com.automation.tests.flightsreservation.FlightsReservationTest" />
+        </classes>
+    </test>
+
+    <!--<test verbose="2" name="FlightsReservationTest2">
+        <parameter name="passengerCount" value="Two"/>
+        <classes>
+            <class name="com.automation.tests.flightsreservation.FlightsReservationTest" />
+        </classes>
+    </test>-->
+
+</suite>

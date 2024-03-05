@@ -1,0 +1,20 @@
+Registration Page:
+- Elements identified using @FindBy - by default the values of all those elements are null
+- So how to interact with these elements?
+- Create a constructor through which we are going to accept the WebDriver
+- Then use PageFactory utility class which has initElements()
+  using which we can pass the driver and initialize all the elements of that page
+
+AbstractionPage:
+- Create common repetitive methods of all the Page classes inside this page
+- WebDriverWait, WebDriver are protected because this AbstractionPage will be extended by other Page classes
+  as it contains their common methods
+  - It is final because we are initializing this in constructor and its not getting modified
+- Use PageFactory.init() to initialize the WebElements that are defined
+  - Note: this is common which can be used by other extending classes
+  Ex: RegistrationPage extends AbstractionPage,
+      - passes its driver instance by invoking AbstractionPage's methods using super(driver)
+- The isAt() - forces every page to implement and confirm that before interacting with its web-elements,
+  it needs to confirm whether the page is loaded or not
+  - This can be confirmed by checking if an element is present or not
+  - Can be done using wait()

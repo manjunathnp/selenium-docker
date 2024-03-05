@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="vendor-portal" parallel="tests" thread-count="4">
+    <test name="user-sam">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataSam.json"/>
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+    <test name="user-mike">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataMike.json"/>
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+    <test name="user-john">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataJohn.json"/>
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+</suite>
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="true" thread-count="3">
+    <test verbose="2" preserve-order="true" name="VendorPortalTest_Sam">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataSam.json"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="VendorPortalTest_Mike">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataMike.json"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="VendorPortalTest_John">
+        <parameter name="testDataPath" value="test-data/vendorportal/testdataJohn.json"/>
+        <classes>
+            <class name="com.automation.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+</suite>-->
+

@@ -1,0 +1,11 @@
+{
+  "firstName": "Hamilton",
+  "lastName": "Wilson",
+  "email": "hamilton.w@test.com",
+  "password": "hwpass",
+  "street": "125test street",
+  "city": "New York",
+  "state": "New York",
+  "zip": "10001",
+  "passengerCount": "Three"
+}

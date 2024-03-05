@@ -1,0 +1,11 @@
+{
+  "firstName": "Micheal",
+  "lastName": "Jackson",
+  "email": "micheal.j@test.com",
+  "password": "mjpass",
+  "street": "123 test street",
+  "city": "New York",
+  "state": "New York",
+  "zip": "10001",
+  "passengerCount": "One"
+}
