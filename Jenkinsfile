@@ -48,7 +48,7 @@ pipeline{
 
         stage('Build DOCKER Image'){
             steps{
-                sh 'docker build -t=manjunathnp/selenium .'
+                sh 'docker build -t=manjunathnp/selenium:latest .'
             }
         }
 
@@ -60,7 +60,9 @@ pipeline{
             steps{
                 // There might be a warning.
                 sh 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
-                sh 'docker push manjunathnp/selenium'
+                sh 'docker push manjunathnp/selenium:latest'
+                sh "docker tag manjunathnp/selenium:latest manjunathnp/selenium:${env.BUILD_NUMBER}"
+                sh "docker push manjunathnp/selenium:${env.BUILD_NUMBER}"
             }
         }
 
