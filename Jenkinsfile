@@ -1,4 +1,4 @@
-pipeline {
+/* pipeline {
     agent none
     stages {
         stage('Build JAR') {
@@ -32,8 +32,8 @@ pipeline {
         }
 
     }
-}
-/*
+} */
+
 pipeline{
 
     agent any
@@ -72,4 +72,4 @@ pipeline{
         }
     }
 
-} */
+}
