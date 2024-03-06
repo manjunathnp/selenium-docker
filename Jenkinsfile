@@ -1,11 +1,39 @@
+pipeline {
+    agent none
+    stages {
+        stage('Build JAR') {
+            agent {
+                docker {
+                    image 'maven:3.9.3-eclipse-temurin-17-focal'
+                    // args '-u root -v /tmp/m2:/root/.m2'
+                }
+            }
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    app = docker.build('manjunathnp/selenium')
+                }
+            }
+        }
+
+        stage('Push Docker Image'){
+            steps{
+                script {
+                    // registry url is blank for dockerhub
+                    docker.withRegistry('', 'dockerhub-creds') {
+                        app.push("latest")
+                    }
+                }
+            }
+        }
+
+    }
+}
 /*
-    Note:
-
-    Windows users use "bat" instead of "sh"
-    For ex: bat 'docker build -t=vinsdocker/selenium .'
-
-    Do not use "vinsdocker" to push. Use your dockerhub account
-*/
 pipeline{
 
     agent any
@@ -44,4 +72,4 @@ pipeline{
         }
     }
 
-}
+} */
